@@ -8,7 +8,12 @@ namespace BrightHR.Classes
 {
     public class Item
     {
-        public int ItemID { get; set; }
         public string SKU { get; set; }
+
+        public int Quantity { get; set; }
+
+        public decimal Price { get; set; }
+
+        public List<ItemOffer> Offers = new List<ItemOffer>();
     }
 }

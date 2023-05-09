@@ -1,5 +1,6 @@
 using BrightHR;
 using BrightHRTests.TestControllers;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel.Client;
 
 namespace BrightHRTests
 {
@@ -20,8 +21,8 @@ namespace BrightHRTests
         {
             Checkout checkout = new Checkout();
             checkout.Scan("A");
-
-            Assert.IsTrue(checkout.Items.Count() == 1);
+            
+            Assert.IsTrue(checkout.Items.Sum(a => a.Quantity) == 1);
             Assert.IsTrue(checkout.Outcome == Checkout.SUCCESS);
         }
 
@@ -32,7 +33,7 @@ namespace BrightHRTests
             checkout.Scan("A");
             checkout.Scan("B");
 
-            Assert.IsTrue(checkout.Items.Count() == 2);
+            Assert.IsTrue(checkout.Items.Sum(a => a.Quantity) == 2);
             Assert.IsTrue(checkout.Outcome == Checkout.SUCCESS);
         }
 
@@ -116,6 +117,31 @@ namespace BrightHRTests
 
             Assert.IsTrue(totalPrice == itemDetails.Item3 * itemDetails.Item2); //Ensure that the price matches x * the standard price, not the multibuy offer price
             Assert.IsTrue(checkout.Outcome == Checkout.SUCCESS);
+        }
+
+        //NOTE: Added this test for manual checks as recreating the pricing logic for the unit tests seems unnessecary
+        [TestMethod]
+        //[Ignore]
+        public void GetTotalPrice_LargeNumberOfMultipleItems()
+        {
+            Checkout checkout = new Checkout();
+
+            for (int i = 0; i < 9; i++)
+            {
+                checkout.Scan("A");
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                checkout.Scan("B");
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                checkout.Scan("C");
+            }
+
+            decimal totalPrice = checkout.GetTotalPrice();
         }
     }
 }
