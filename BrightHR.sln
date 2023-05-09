@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrightHR", "BrightHR\BrightHR.csproj", "{521A410C-6FF2-43DF-BFB6-DC286569304C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrightHRTests", "BrightHRTests\BrightHRTests.csproj", "{0F42DAC7-52C7-4195-AAE7-724338A161D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{521A410C-6FF2-43DF-BFB6-DC286569304C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{521A410C-6FF2-43DF-BFB6-DC286569304C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{521A410C-6FF2-43DF-BFB6-DC286569304C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{521A410C-6FF2-43DF-BFB6-DC286569304C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F42DAC7-52C7-4195-AAE7-724338A161D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F42DAC7-52C7-4195-AAE7-724338A161D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F42DAC7-52C7-4195-AAE7-724338A161D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F42DAC7-52C7-4195-AAE7-724338A161D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36217B38-0A05-494D-B406-DE6CAC8121AD}
+	EndGlobalSection
+EndGlobal
